@@ -1,14 +1,44 @@
-import React from "react";
-import { FaBars } from 'react-icons/fa';
+import React, { useState, useEffect } from "react";
+import { FaBars } from "react-icons/fa";
 import "../styles/navbar.css";
+
+
+
+
 export const Navbar = () => {
+  const [scroll, setScroll] = useState(false);
+  
+ 
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 70;
+      if (isScrolled) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the event listener
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
+
+
+
+
   return (
-    <div className="navbar">
+    <div className={`navbar ${scroll? 'navbar-active':''}`}>
       <div className="logo">
-       <h2>Expense</h2>
+        <h2>Expense</h2>
       </div>
       <div className="bars">
-        <FaBars/>
+        <FaBars />
       </div>
       <div className="links">
         <ul>

@@ -7,20 +7,32 @@ h2{
     font-family:'Great Vibes';
     font-size: 2rem;
     color: #91b2e5;
+    padding-left: 1rem;
 }
 .bars{
     display: flex;
     font-size: 1.5rem;
+    padding-right: 1rem;
 }
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 70px;
-  padding: 0 1rem;
   background-color: white;
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  transition: 0.3 ease;
 }
-
+.navbar-active{
+    background-color: #f4fafe;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
 .links{
     display: none;
 }
@@ -64,6 +76,7 @@ color: rgba(27, 27, 27, 0.877);
     .navbar{
         justify-content: space-around;
         padding: 0;
+        z-index: 10;
     }
     h2{
         font-size: 3rem;
