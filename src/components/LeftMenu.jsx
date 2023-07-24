@@ -4,32 +4,8 @@ import { GoGraph } from 'react-icons/go';
 import { FaSignOutAlt } from 'react-icons/fa';
 
 
-{/* <div className='left'>
-        <div className='top'>
-          <div className='user'>
-            <img src={avatar} 
-            alt="user image" 
-            height={50} 
-            width={50}/>
-            <div className='details'>
-            <h3>UserName</h3>
-            <p>Your Money</p>
-            </div>
-          </div>
-          <div className='navigations'>
-            <ul>
-              <li><a className='Dashboard' href="#"><GoGraph/>Dashboard</a></li>
-              <li><a className='Budget' href="#">Budget</a></li>
-              <li><a className='Expenses' href="#">Expenses</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className='button'>
-          <button><FaSignOutAlt/>Sign Out</button>
-        </div>
-      </div> */}
-      const LeftMenu = () => {
-        return (
+const LeftMenu = () => {
+    return (
           <div className='left'>
             <div className='top'>
               <div className='user'>
@@ -67,6 +43,52 @@ import { FaSignOutAlt } from 'react-icons/fa';
             </div>
           </div>
         );
-      };
-      
-      export default LeftMenu;
+    };
+    
+    export default LeftMenu;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    {/* <div className='left'>
+            <div className='top'>
+              <div className='user'>
+                <img src={avatar} 
+                alt="user image" 
+                height={50} 
+                width={50}/>
+                <div className='details'>
+                <h3>UserName</h3>
+                <p>Your Money</p>
+                </div>
+              </div>
+              <div className='navigations'>
+                <ul>
+                  <li><a className='Dashboard' href="#"><GoGraph/>Dashboard</a></li>
+                  <li><a className='Budget' href="#">Budget</a></li>
+                  <li><a className='Expenses' href="#">Expenses</a></li>
+                </ul>
+              </div>
+            </div>
+            <div className='button'>
+              <button><FaSignOutAlt/>Sign Out</button>
+            </div>
+          </div> */}
