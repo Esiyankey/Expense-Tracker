@@ -40,7 +40,10 @@ export const Budget = () => {
                 <div>
                  <label htmlFor="">Budget Name</label> <input onChange={percentageTitleEvent}  type="text" placeholder='title' name="" id="" /> 
                  <label htmlFor="">Bughet percentage</label><input onChange={percentageValueEvent} type="text" placeholder='Percentage'/>
-                  <button onClick={addPercentageObject} >Add</button>
+                 
+                </div>
+                <div className="addButton">
+                <button onClick={addPercentageObject} >Add</button>
                 </div>
                 <div className='budget-percentages'>
                     <ul>
@@ -53,7 +56,7 @@ export const Budget = () => {
                     </ul>
                 </div>
             </div>
-            <button>Create Budget</button>
+            <button className='createBudget'>Create Budget</button>
         </div>
         
         <div className='amountsPerDivision'>
