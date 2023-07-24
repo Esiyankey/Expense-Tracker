@@ -43,11 +43,11 @@ export const Budget = () => {
     
         useEffect(() =>{
             let totalPercentages =0;
-        for(const percentagesObj of percentagesArray){
-            totalPercentages += parseFloat(percentagesObj.value)
-        }
-        setPercentageTracker(totalPercentages);
-        console.log(percentageTracker)
+            for(const percentagesObj of percentagesArray){
+               totalPercentages += parseFloat(percentagesObj.value)
+              }
+             setPercentageTracker(totalPercentages);
+             console.log(percentageTracker)
         },[percentagesArray]);
     
 
@@ -66,6 +66,7 @@ export const Budget = () => {
                  <label htmlFor="">Budget Name</label> 
                  <input 
                    onChange={percentageTitleEvent}
+                   onFocus={()=> setInputError('')}
                    type="text"
                    placeholder='title'
                    value={percentageTitle} 
@@ -74,6 +75,7 @@ export const Budget = () => {
                  <label htmlFor="">Bughet percentage</label>
                  <input 
                   onChange={percentageValueEvent} 
+                  onFocus={() => setInputError('')}
                   type="text"
                   placeholder='Percentage' 
                   value={percentageValue}
