@@ -1,0 +1,38 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 100vh;
+}
+.expenses-results{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius:0.6rem;
+    height: 3rem;
+}
+.bottom{
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+form input{
+    display: block;
+    margin: 0.9rem 0rem;
+    border-radius: 0.6rem;
+    border:solid 3px white;
+    padding: 0.3rem 2rem;
+    background: none;
+    color:rgb(163, 160, 160);
+}
+form input::placeholder{
+    color:gray;
+}
+form input :focus{
+    border:solid 3px rgb(251, 251, 251);
+    background-color: aliceblue;
+}
+button{
+    cursor: pointer;
+}

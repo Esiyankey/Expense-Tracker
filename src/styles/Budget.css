@@ -4,7 +4,7 @@
     gap: 0.5rem;
     height: 100vh;
 }
-.budget-results{
+.balance{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,19 +17,13 @@
     justify-content: space-between;
     gap: 1.5rem;
 }
-form input{
-    display: block;
-    margin: 0.9rem 0rem;
+.budget-percentages ul li{
+    list-style: none;
+}
+.budget-percentages{
+    padding:1rem;
+    border: 1px solid ;
+    width: 9rem;
+    margin-top: 1rem;
     border-radius: 0.6rem;
-    border:solid 3px white;
-    padding: 0.3rem 2rem;
-    background: none;
-    color:rgb(163, 160, 160);
-}
-form input::placeholder{
-    color:gray;
-}
-form input :focus{
-    border:solid 3px rgb(251, 251, 251);
-    background-color: aliceblue;
 }
