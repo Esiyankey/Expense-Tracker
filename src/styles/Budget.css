@@ -30,6 +30,13 @@
     gap: 1rem;
     border-radius: 0.6rem;
 }
+.inputs{
+    display: flex;
+    flex-direction: column;
+}
+.input input{
+    width: 2rem;
+}
 .divisions button{
     width: 2.5rem;
 }
@@ -65,8 +72,40 @@
     width: 6.5rem;
     padding: 0.8rem;
 }
-.error-message {
-  color: red;
-  font-size: 14px;
-  margin-top: 5px;
-}
+
+ 
+  .error-message {
+    color: red;
+    font-size: 0.9rem;
+  }
+  
+  .inputs {
+    position: relative;
+  }
+  
+  .inputs input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .inputs input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  .cylinder {
+    height: 0.8rem;
+    background-color: #f0f0f0;
+    border-radius: 1.5rem;
+    overflow: hidden;
+  }
+  
+  .fill {
+    height: 100%;
+    background: linear-gradient(to right, #4f9beb 0%, rgb(230, 69, 69) 100%);
+    transition: width 0.3s ease-in-out;
+  }
+  
+
