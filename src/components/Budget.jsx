@@ -39,7 +39,7 @@ export const Budget = () => {
                 <h3>Enter Budget percentages</h3>
                 <div>
                  <label htmlFor="">Budget Name</label> <input onChange={percentageTitleEvent}  type="text" placeholder='title' name="" id="" /> 
-                 <label htmlFor="">Bughet percentages</label><input onChange={percentageValueEvent} type="text" placeholder='Percentage'/>
+                 <label htmlFor="">Bughet percentage</label><input onChange={percentageValueEvent} type="text" placeholder='Percentage'/>
                   <button onClick={addPercentageObject} >Add</button>
                 </div>
                 <div className='budget-percentages'>
