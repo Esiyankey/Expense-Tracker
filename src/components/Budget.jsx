@@ -10,6 +10,7 @@ export const Budget = () => {
     const [percentageTitle,setPercentageTitle]=useState('');
     const [percentageTracker,setPercentageTracker] = useState(0);
     const [inputError, setInputError] =useState('');
+    
  
 
     const percentageValueEvent=(e)=>{
@@ -70,14 +71,14 @@ export const Budget = () => {
       </div>
       <div className='bottom'>
         <div className='budget-divisions'>
-            <div className="incomeValue"><label id='Income'>Enter Total Income</label><input type="text" /></div>
+            <div className="incomeValue"><label id='Income'>Enter Total Income</label><input className='income' type="text" /></div>
             <div className='divisions'> 
                 <h3>Enter Budget percentages</h3>
                 <div className='cylinder'>
               <div
                 className='fill'
                 style={{ width: `${(percentageTracker / MAX_PERCENTAGE) * 100}%` }}>
-                    
+
                 </div>
             </div>
                 <div className='inputs'>

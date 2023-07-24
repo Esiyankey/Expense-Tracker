@@ -83,7 +83,7 @@
     position: relative;
   }
   
-  .inputs input {
+  .inputs input ,.income{
     width: 100%;
     padding: 8px;
     font-size: 16px;
@@ -91,7 +91,7 @@
     border-radius: 4px;
   }
   
-  .inputs input:focus {
+  .income:focus,.inputs input:focus {
     outline: none;
     border-color: #007bff;
   }
