@@ -9,21 +9,20 @@ export const Budget = () => {
  
 
     const percentageValueEvent=(e)=>{
-            setPercentageValue(e.target.value)
-    }
+            setPercentageValue(e.target.value);
+    };
     const percentageTitleEvent=(e)=>{
-            setPercentageTitle(e.target.value)
-    }
+            setPercentageTitle(e.target.value);
+    };
 
     const addPercentageObject =()=>{
         const newPercentageObject ={
             title:percentageTitle,
             value:percentagevalue
-        }
-        setPercentageArray ([...percentagesArray, newPercentageObject])
-        setPercentageValue('')
-        setPercentageTitle('')
-        console.log(percentagesArray)
+        };
+        setPercentageArray ([...percentagesArray, newPercentageObject]);
+        setPercentageValue('');
+        setPercentageTitle('');
     };
     
 
