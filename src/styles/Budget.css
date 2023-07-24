@@ -13,6 +13,7 @@
     height: 3rem;
 }
 .bottom{
+    margin-top: 1rem;
     display: flex;
     justify-content: space-between;
     gap: 1.5rem;
@@ -44,8 +45,10 @@
     width: 100%;
     border-radius: 0.6rem;
 }
-.amountsPerDivision{
+.newBudget{
     background-color:white;
+    border-radius: 0.6rem;
+    padding: 1rem;
 }
 .title-percentages{
     background-color: #e3d9d9;
