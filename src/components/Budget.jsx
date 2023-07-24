@@ -38,25 +38,26 @@ export const Budget = () => {
             <div className='divisions'> 
                 <h3>Enter Budget percentages</h3>
                 <div>
-    <label htmlFor="">Budget Name</label> <input onChange={percentageTitleEvent}  type="text" placeholder='title' name="" id="" /> 
-     <label htmlFor="">Bughet percentages</label><input onChange={percentageValueEvent} type="text" placeholder='Percentage'/>
-     <button onClick={addPercentageObject} >Add</button>
+                 <label htmlFor="">Budget Name</label> <input onChange={percentageTitleEvent}  type="text" placeholder='title' name="" id="" /> 
+                 <label htmlFor="">Bughet percentages</label><input onChange={percentageValueEvent} type="text" placeholder='Percentage'/>
+                  <button onClick={addPercentageObject} >Add</button>
                 </div>
                 <div className='budget-percentages'>
                     <ul>
-                        {percentagesArray.map((percentagesObj, index) =>(
-                            <div key={index}>
-                                <h3>{percentagesObj.title}</h3>
+                        <li>{percentagesArray.map((percentagesObj, index) =>(
+                            <div key={index} className='title-percentages'>
+                                <h3 >{percentagesObj.title}</h3>
                                 <p>{percentagesObj.value}</p>
                             </div>
-                        
-                        ))}
+                        ))}</li>
                     </ul>
                 </div>
             </div>
+            <button>Create Budget</button>
         </div>
+        
         <div className='amountsPerDivision'>
-            
+            The total displays will appear here after the create budget button is clicked 
         </div>
         
       </div>
