@@ -87,26 +87,4 @@ button{
     justify-content: center;
     align-items: center;
 }
-/* Media Query for Smaller Screen Sizes */
-@media (max-width: 768px) {
-    .home-container {
-      width: 90%;
-    }
-    .home {
-      flex-direction: column;
-    }
-    .left {
-      flex: 100%;
-      margin-bottom: 1rem;
-    }
-    .components {
-      flex: 100%;
-    }
-  }
-  
-  /* Media Query for Tablets */
-  @media (max-width: 1024px) {
-    .home-container {
-      width: 80%;
-    }
-  }
+
