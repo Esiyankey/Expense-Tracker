@@ -96,7 +96,9 @@ export const Budget = () => {
                     </ul>
                 </div>
             </div>
-            <button className='createBudget'>Create Budget</button>
+            <div className="createBudget">
+            <button className='createButton'>Create Budget</button>
+            </div>
         </div>
         
         <div className='newBudget'>
