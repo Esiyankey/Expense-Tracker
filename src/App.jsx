@@ -1,19 +1,20 @@
-// import { useState } from 'react'
+import React from 'react'
 import './App.css'
-// import { Navbar } from './components/Navbar'
-// import { Landing } from './components/Landing'
-// import { Footer } from './components/footer'
-import { Homepage } from './components/Homepage'
+import { createBrowserRouter,RouterProvider,} from "react-router-dom";
+import { Homepage } from './components/Homepage';
+import { LandingPage } from './components/LandingPage';
 
 function App() {
   
-
+  const router = createBrowserRouter([
+    { path: "/", element: <LandingPage /> },
+    { path: "/home", element: <Homepage /> },
+    
+  ])
   return (
     <>
-      {/* <Navbar/>
-      <Landing/>
-      <Footer/> */}
-      <Homepage />
+      
+      <RouterProvider router={router}/>
     </>
   )
 }

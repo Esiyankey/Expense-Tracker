@@ -2,9 +2,30 @@ import React from "react"
 import avatar from '../assets/avatar.png'
 import { GoGraph } from 'react-icons/go';
 import { FaSignOutAlt } from 'react-icons/fa';
-
+import { getAuth } from "firebase/auth";
+import { app } from "../config/firebase.js";
+import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const LeftMenu = () => {
+
+  const navigate=useNavigate();
+  const auth = getAuth(app)
+
+  const handleLogOut = () => {
+    const LogOut = async () => {
+      try {
+        await auth.signOut();
+        navigate("/");
+      } catch (error) {
+        alert("error loggin out");
+        console.log(error);
+      }
+    };
+    LogOut();
+  };
+
+
     return (
           <div className='left'>
             <div className='top'>
@@ -37,7 +58,7 @@ const LeftMenu = () => {
               </div>
             </div>
             <div className='button'>
-              <button>
+              <button onClick={handleLogOut}>
                 <FaSignOutAlt />Sign Out
               </button>
             </div>
