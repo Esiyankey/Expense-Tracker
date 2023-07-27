@@ -30,7 +30,7 @@ const LeftMenu = () => {
           <div className='left'>
             <div className='top'>
               <div className='user'>
-                <img src={avatar} alt='user image' height={50} width={50} />
+                <img src={avatar} alt='user image' height={60} width={60} />
                 <div className='details'>
                   <h3>UserName</h3>
                   <p>Your Money</p>
@@ -39,20 +39,13 @@ const LeftMenu = () => {
               <div className='navigations'>
                 <ul>
                   <li>
-                    <a className='Dashboard' href='#'>
-                      <GoGraph />
-                      Dashboard
-                    </a>
+                    <button><GoGraph />Dashboard</button>
                   </li>
                   <li>
-                    <a className='Budget' href='#'>
-                      Budget
-                    </a>
+                  <button><GoGraph />Budget</button>
                   </li>
                   <li>
-                    <a className='Expenses' href='#'>
-                      Expenses
-                    </a>
+                  <button><GoGraph />Expenses</button>
                   </li>
                 </ul>
               </div>
