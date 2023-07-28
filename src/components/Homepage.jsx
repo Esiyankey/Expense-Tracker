@@ -1,6 +1,7 @@
 import React from 'react'
 import '../styles/Homepage.css'
-import { Budget } from './Budget'
+import { Budget } from '../components/Budget'
+import {Expenses} from '../components/Expenses'
 import LeftMenu from './leftMenu'
 
 

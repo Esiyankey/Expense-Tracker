@@ -33,6 +33,7 @@
     flex-basis: 300px;
     min-width: 0;
     overflow: hidden;
+    padding-top: 4rem ;
 }
 .top{
     display: flex;

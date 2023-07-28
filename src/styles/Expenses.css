@@ -36,3 +36,6 @@ form input :focus{
 button{
     cursor: pointer;
 }
+.expenses{
+    background-color: white;
+}
