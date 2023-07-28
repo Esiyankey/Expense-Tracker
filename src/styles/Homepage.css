@@ -12,6 +12,7 @@
     width: 80rem;
     height: 100vh;
     flex: 1;
+    
    
 }
 .home{
@@ -29,7 +30,8 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     flex-basis: 300px;
     min-width: 0;
     overflow: hidden;
@@ -93,6 +95,14 @@ button{
     justify-content: center;
     align-items: center;
 }
+.sign-out{
+    width: 7rem;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    border-radius: 32px;
+}
+
+
 /* Styles for smaller screens - Mobile Layout */
 @media (max-width: 768px) {
   .home-container {

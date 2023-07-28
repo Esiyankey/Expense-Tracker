@@ -37,5 +37,21 @@ button{
     cursor: pointer;
 }
 .expenses{
-    background-color: white;
+    background-color:  #f3eeee;
 }
+/* Style for each expense list item */
+.title-expenses {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0.6rem;
+    background-color: white;
+  }
+  
+  /* Style for the list of expenses */
+  .expenses ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  

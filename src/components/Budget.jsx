@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { FaDollarSign } from 'react-icons/fa';
 import '../styles/Budget.css';
 
 export const Budget = () => {
@@ -92,8 +91,8 @@ export const Budget = () => {
         {/* Display total income */}
         <div className='balance'>
           <h3>Total Income:</h3>
-          <FaDollarSign />
-          {incomeValue}
+          {/* Use toFixed(2) to display totalIncome with 2 decimal places */}
+          {`$${parseFloat(incomeValue).toFixed(2)}`}
         </div>
     
         <div className='bottom'>
@@ -125,7 +124,7 @@ export const Budget = () => {
               </div>
               <div className='inputs'>
                 {/* Input field for Budget Name */}
-                <label htmlFor="">Budget Name</label>
+                <label >Budget Name</label>
                 <input
                   onChange={percentageTitleEvent}
                   onFocus={() => setInputError('')}
