@@ -12,6 +12,7 @@
     width: 80rem;
     height: 100vh;
     flex: 1;
+    
    
 }
 .home{
@@ -29,10 +30,16 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     flex-basis: 300px;
     min-width: 0;
     overflow: hidden;
+    padding-top: 4rem ;
+}
+.top{
+    display: flex;
+    flex-direction: column;
 }
 .components{
     background-color: aqua;
@@ -44,32 +51,32 @@
     background-color: #f3f1f1;
 }
 .user{
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
-.info p{
-    font-size: 0.5rem;
-    text-align: center;
-}
-.navigations a{
-    text-decoration: none;
-    color: black;
-    display: flex;
-    width:6rem;
-} 
+
+
+
 .navigations ul li{
     list-style: none;
-    margin-top: 0.5rem;
-    font-weight: 500;
-    font-size: 1rem;
+    margin-top: 0.8rem;
 }
-.navigations a:hover{
+
+.navigations ul li button{
+    font-size: 1rem;
+    display: flex;
+    gap: 0.3rem;
+    width: 7rem;
+}
+.navigations ul li button:hover{
     cursor: pointer;
-    text-decoration: underline;
-    transition: 1s;
-    background-color: hsla(0, 2%, 70%, 0.133);
+}
+.user .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .user img{
     border-radius: 32px;
@@ -88,6 +95,14 @@ button{
     justify-content: center;
     align-items: center;
 }
+.sign-out{
+    width: 7rem;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    border-radius: 32px;
+}
+
+
 /* Styles for smaller screens - Mobile Layout */
 @media (max-width: 768px) {
   .home-container {

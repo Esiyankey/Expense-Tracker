@@ -7,7 +7,7 @@ import { app } from "../config/firebase.js";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
-const LeftMenu = () => {
+const LeftMenu = ({onMenuClick}) => {
 
   const navigate=useNavigate();
   const auth = getAuth(app)
@@ -30,7 +30,7 @@ const LeftMenu = () => {
           <div className='left'>
             <div className='top'>
               <div className='user'>
-                <img src={avatar} alt='user image' height={50} width={50} />
+                <img src={avatar} alt='user image' height={60} width={60} />
                 <div className='details'>
                   <h3>UserName</h3>
                   <p>Your Money</p>
@@ -39,77 +39,25 @@ const LeftMenu = () => {
               <div className='navigations'>
                 <ul>
                   <li>
-                    <a className='Dashboard' href='#'>
-                      <GoGraph />
-                      Dashboard
-                    </a>
+                    <button onClick={()=>onMenuClick('Dashboard')}><GoGraph />Dashboard</button>
                   </li>
                   <li>
-                    <a className='Budget' href='#'>
-                      Budget
-                    </a>
+                  <button onClick={()=>onMenuClick('Budget')}>Budget</button>
                   </li>
                   <li>
-                    <a className='Expenses' href='#'>
-                      Expenses
-                    </a>
+                  <button onClick={()=>onMenuClick('Expenses')}>Expenses</button>
                   </li>
                 </ul>
               </div>
             </div>
-            <div className='button'>
-              <button onClick={handleLogOut}>
+            
+             <button className="sign-out" onClick={handleLogOut}>
                 <FaSignOutAlt />Sign Out
-              </button>
-            </div>
+             </button>
+          
           </div>
         );
     };
     
     export default LeftMenu;
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    {/* <div className='left'>
-            <div className='top'>
-              <div className='user'>
-                <img src={avatar} 
-                alt="user image" 
-                height={50} 
-                width={50}/>
-                <div className='details'>
-                <h3>UserName</h3>
-                <p>Your Money</p>
-                </div>
-              </div>
-              <div className='navigations'>
-                <ul>
-                  <li><a className='Dashboard' href="#"><GoGraph/>Dashboard</a></li>
-                  <li><a className='Budget' href="#">Budget</a></li>
-                  <li><a className='Expenses' href="#">Expenses</a></li>
-                </ul>
-              </div>
-            </div>
-            <div className='button'>
-              <button><FaSignOutAlt/>Sign Out</button>
-            </div>
-          </div> */}

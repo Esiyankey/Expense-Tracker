@@ -5,7 +5,6 @@ import '../styles/Dashboard.css'
 
 
 
-
 export const Dashboard = () => {
   const Salaryexpense = (props)=>{
     return(
@@ -32,21 +31,31 @@ export const Dashboard = () => {
           </div>
         </div>
 
-        <div className='income-expenses'>
+       <div className='totals'>
+         <div className='income-expenses'>
           <div className='total-income'>
               <h4>Total Income</h4>
-            
+              <div className="amount">
+          {`$${parseFloat().toFixed(2)}`}
+          </div>
           </div>
           <div className='total-expenses'>
           <h4>Total Expenses</h4>
-          </div>    
-        </div>
-        <div className='balance'>
-          <div className='total-balance'>
-          <h4>Total Balance</h4>
+          <div className="amount">
+          {`$${parseFloat().toFixed(2)}`}
           </div>
-      
-        </div>
+          </div>    
+         </div>
+         <div className='balance'>
+          <div className='total-balance'>
+           <h4>Total Balance</h4>
+           <div className="amount">
+             {`$${parseFloat().toFixed(2)}`}
+           </div>
+          </div>
+         </div>
+       </div>
+        
       </div>
       <div className='r-dashboard'>
           <h2>Recent History</h2>

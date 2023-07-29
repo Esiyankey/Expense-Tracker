@@ -14,8 +14,10 @@
 }
 .bottom{
     display: flex;
-    justify-content: space-between;
     gap: 1.5rem;
+}
+.expenses-inputs,.expenses{
+    flex: 50%;
 }
 form input{
     display: block;
@@ -36,3 +38,23 @@ form input :focus{
 button{
     cursor: pointer;
 }
+.expenses{
+    background-color:  #f3eeee;
+    
+}
+/* Style for each expense list item */
+.title-expenses {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0.6rem;
+    background-color: white;
+  }
+  
+  /* Style for the list of expenses */
+  .expenses ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
