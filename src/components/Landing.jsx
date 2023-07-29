@@ -3,10 +3,12 @@ import "../styles/landingpage.css";
 import image from "../assets/expense-tracker-.png";
 import chart1 from "../assets/chart2.png";
 import chart2 from "../assets/chartimage2.jpeg";
+import {AiOutlineHome} from "react-icons/ai"
+import {BsPersonWorkspace,BsRocketTakeoff,BsInfoCircle} from "react-icons/bs"
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-export const Landing = () => {
+export const Landing = ({ showLinks }) => {
 
 
   useEffect(() => {
@@ -58,6 +60,29 @@ export const Landing = () => {
           </div>
         </div>
       </div>
+      {showLinks && (
+          <div className={`showlinks ${showLinks?"link":""}`}>
+            <ul>
+              <li>
+                <AiOutlineHome className="icon"/>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <BsPersonWorkspace className="icon"/>
+                <a href="#">How it works</a>
+              </li>
+              <li>
+                <BsInfoCircle className="icon"/>
+                <a href="#">About us</a>
+              </li>
+              <li>
+                <BsRocketTakeoff className="icon"/>
+                <a href="#">Get Started</a>
+              </li>
+            </ul>
+           
+          </div>
+        ) }
     </>
   );
 };

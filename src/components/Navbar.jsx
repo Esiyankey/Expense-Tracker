@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
+import { AiOutlineClose } from "react-icons/ai";
 import "../styles/navbar.css";
 import { Modal } from "./modal";
 
-export const Navbar = () => {
+export const Navbar = ({ handleShowLinks, handleCloseLinks, showLinks }) => {
   const [scroll, setScroll] = useState(false);
   const [showModal, setshowModal] = useState(false);
   const handleCloseModal = () => {
@@ -34,14 +35,19 @@ export const Navbar = () => {
 
   return (
     <>
-      {showModal && <Modal handleCloseModal={handleCloseModal}/>}
+      {showModal && <Modal handleCloseModal={handleCloseModal} />}
       <div className={`navbar ${scroll ? "navbar-active" : ""}`}>
         <div className="logo">
           <h2>Expense</h2>
         </div>
-        <div className="bars">
-          <FaBars />
-        </div>
+        <button className="bars">
+          {showLinks ? (
+            <AiOutlineClose className="closeBar" onClick={handleCloseLinks} />
+          ) : (
+            <FaBars onClick={handleShowLinks} />
+          )}
+        </button>
+
         <div className="links">
           <ul>
             <li>

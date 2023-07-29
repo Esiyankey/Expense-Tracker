@@ -27,7 +27,6 @@ export const Modal = ({ handleCloseModal }) => {
   const handleLogin = async () => {
     try {
       await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-      alert("in")
       console.log("succesfully logged in");
       navigate("/home");
     } catch (error) {
@@ -43,12 +42,10 @@ export const Modal = ({ handleCloseModal }) => {
       );
       console.log("signed up");
       const user = userCredentials.user;
-      console.log(user);
       navigate("/home");
     } catch (error) {
       alert("error");
     }
-    alert("hi there");
   };
 
   return (

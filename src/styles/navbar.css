@@ -13,7 +13,15 @@ h2 {
   display: flex;
   font-size: 1.5rem;
   padding-right: 1rem;
+  cursor: pointer;
+  background: none;
+  position: relative;
 }
+.closeBar{
+  /* position: absolute; */
+  font-size: 1.5rem;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -36,6 +44,8 @@ h2 {
 .links {
   display: none;
 }
+
+
 .links {
   justify-content: space-between;
   align-items: center;
