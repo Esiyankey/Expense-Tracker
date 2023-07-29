@@ -1,11 +1,9 @@
-.Main {
+.main{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    height: 100vh; /* Set the height of .Main to 100vh to take up the full viewport height */
-  }
- 
-  
+    height: 100vh;
+}
 .balance{
     display: flex;
     justify-content: center;
@@ -50,7 +48,7 @@
 }
 .budget-percentages{
     padding:0.5rem;
-    border: 1px solid;
+    border: px solid;
     width: 100%;
     border-radius: 0.6rem;
 }

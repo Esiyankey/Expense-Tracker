@@ -14,8 +14,10 @@
 }
 .bottom{
     display: flex;
-    justify-content: space-between;
     gap: 1.5rem;
+}
+.expenses-inputs,.expenses{
+    flex: 50%;
 }
 form input{
     display: block;
@@ -38,6 +40,7 @@ button{
 }
 .expenses{
     background-color:  #f3eeee;
+    
 }
 /* Style for each expense list item */
 .title-expenses {
