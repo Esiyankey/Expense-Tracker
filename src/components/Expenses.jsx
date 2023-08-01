@@ -109,7 +109,7 @@ export const Expenses = ({totalExpenses,setTotalExpenses}) => {
       {/* Display total expenses */}
       <div className='expenses-results'>
         <h3>Total Expenses:</h3>
-        {`$${parseFloat(totalExpenses).toFixed(2)}`}
+        <h5>{`$${parseFloat(totalExpenses).toFixed(2)}`}</h5>
       </div>
 
       <div className='bottom'>

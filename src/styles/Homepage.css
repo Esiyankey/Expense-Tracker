@@ -118,7 +118,7 @@ button:hover{
 
 
 /* Styles for smaller screens - Mobile Layout */
-@media (max-width: px) {
+@media (max-width: 884px) {
   .home-container {
     flex-direction:row ;
     padding: 0rem;
