@@ -38,7 +38,6 @@ const LeftMenu = ({onMenuClick,isMenuOpen}) => {
                 <img src={avatar} alt='user image' height={75} width={75} />
                 <div className='details'>
                   <h3>UserName</h3>
-                  <p>Your Money</p>
                 </div>
               </div>
               <div className='navigations'>
