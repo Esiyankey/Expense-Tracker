@@ -1,14 +1,48 @@
-import React, { useState } from 'react';
+// import React, { useState,useEffect } from 'react';
 import '../styles/Expenses.css';
+import {db} from '../config/firebase'
+import { doc,onSnapshot,collection,setDoc, Timestamp,deleteDoc} from 'firebase/firestore';
+import { MdDeleteForever} from 'react-icons/md';
 
-export const Expenses = () => {
+
+export const Expenses = ({totalExpenses,setTotalExpenses}) => {
   // State variables to manage the expenses and their total
-  const [totalExpenses, setTotalExpenses] = useState(0);
+  
   const [expensesTitle, setExpensesTitle] = useState('');
   const [expensesAmount, setExpensesAmount] = useState('');
   const [expensesDate, setExpensesDate] = useState('');
-  const [expensesReference, setExpensesReference] = useState('');
   const [expensesArray, setExpensesArray] = useState([]);
+  
+  const calculateTotalExpenses = () => {
+    let total = 0;
+    for (const expense of expensesArray) {
+      total += parseFloat(expense.Amount);
+    }
+    return total;
+  };
+  
+  useEffect(()=>{
+    const fetchExpenses=async()=>{
+      const expenseCollection= collection(db,'expense');
+      onSnapshot(expenseCollection,(querySnapshot)=>{
+        const expenseArray =[];
+        querySnapshot.forEach((doc)=>{expenseArray.push(doc.data())});
+        setExpensesArray(expenseArray);
+        const total = calculateTotalExpenses();
+      setTotalExpenses(total);
+      });
+    };
+    fetchExpenses();
+  },[])
+  
+  const formatDate = (timestamp) => {
+    if (timestamp) {
+      const date = timestamp.toDate();
+      return date.toLocaleDateString(); 
+    }
+    return "";
+  };
+  
 
   // Event handler for expenses title input
   const expensesTitleEvent = (e) => {
@@ -25,45 +59,46 @@ export const Expenses = () => {
     setExpensesDate(event.target.value);
   };
 
-  // Event handler for expenses reference input
-  const expensesReferenceEvent = (event) => {
-    setExpensesReference(event.target.value);
-  };
 
-  // Function to add expenses when the "Add Expenses" button is clicked
-  const addExpenses = () => {
-    // Check if all the fields are filled out before adding an expense
-    if (!expensesTitle || !expensesAmount || !expensesDate || !expensesReference) {
-      alert('Please fill out all the fields before adding an expense.');
-      return;
+  const AddExpenses=async()=>{
+    if (expensesTitle.trim() !== "" && expensesAmount.trim() !== "") {
+      try {
+        const expenseAsNumber = parseFloat(expensesAmount);
+        if (isNaN(expenseAsNumber) || expenseAsNumber <= 0) {
+          alert('Please enter a valid expense amount.');
+          return;
+        }
+        //init new doc
+   
+        const newDoc = doc(collection(db, "expense"));
+        const newExpense = {
+          id:newDoc.id,
+          Title: expensesTitle,
+          Amount: expensesAmount,
+          Date : Timestamp.fromDate(new Date(expensesDate)),
+          deleted: false,
+          
+        };
+       
+  
+        await setDoc(newDoc, newExpense);
+        alert('Expense added successfully.');
+      } catch (e) {
+        alert(" Error adding expenses");
+        console.error("Error adding document: ", e);
+      }
+      
     }
-
-    const expenseAsNumber = parseInt(expensesAmount, 10);
-
-    // Check for valid expense amount
-    if (isNaN(expenseAsNumber) || expenseAsNumber <= 0) {
-      alert('Please enter a valid expense amount.');
-      return;
+  }
+  const deleteForever = async (noteId) => {
+    try {
+      const expenseRef = doc(db, "expense", noteId);
+      const expenseString = String(expenseRef);
+      await deleteDoc(expenseString);
+      console.log("Expense deleted successfully!");
+    } catch (error) {
+      console.error("Error deleting expense:", error);
     }
-
-    // Update the total expenses
-    setTotalExpenses(totalExpenses + expenseAsNumber);
-
-    // Create a new expenses object and add it to the expenses array
-    const newExpensesObject = {
-      title: expensesTitle,
-      value: expenseAsNumber,
-      date: expensesDate,
-      reference: expensesReference,
-    };
-
-    setExpensesArray([...expensesArray, newExpensesObject]);
-
-    // Clear the input fields
-    setExpensesTitle('');
-    setExpensesAmount('');
-    setExpensesDate('');
-    setExpensesReference('');
   };
 
   return (
@@ -102,35 +137,35 @@ export const Expenses = () => {
               value={expensesDate}
               placeholder='Enter A Date'
             />
-            <textarea
-              onChange={expensesReferenceEvent}
-              name='reference'
-              cols='25'
-              rows='10'
-              value={expensesReference}
-              placeholder='Add A Reference'
-            ></textarea>
           </form>
           {/* Add Expenses button */}
-          <button onClick={addExpenses}>Add Expenses</button>
+          <button onClick={AddExpenses}>Add Expenses</button>
         </div>
 
         <div className='expenses'>
           {/* The list of expenses will be displayed here */}
           <ul>
-            {expensesArray.map((expense, index) => (
-              <li key={index} className='title-expenses'>
-                <h3>{expense.title}</h3>
-                <p>
-                  Amount:{`$${parseFloat(expense.value).toFixed(2)}`}
-                </p>
-                <p>Date: {expense.date}</p>
-                <p>Reference: {expense.reference}</p>
-              </li>
-            ))}
+            {expensesArray.map((expense, index) => {
+             
+               return (<li key={index} className='title-expenses'>
+                <h3>{expense.Title}</h3>
+                <div className="amount">
+                Amount:{` $${parseFloat(expense.Amount).toFixed(2)}`}
+                </div>
+                <div className="date">
+                <div className="delete">
+                Date: {formatDate(expense.Date)}
+                <button onClick={deleteForever}><MdDeleteForever/></button>
+                </div>
+                </div>
+               
+              </li>)
+                
+               })}
           </ul>
         </div>
       </div>
     </div>
   );
 };
+

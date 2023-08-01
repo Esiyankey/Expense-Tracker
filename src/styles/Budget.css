@@ -67,6 +67,10 @@
     margin-bottom: 0.2rem;
     border-radius:0.6rem;
 }
+.title-percentages p,h3{
+    padding: 0;
+    margin: 0;
+}
 
 .createBudget{
     width: 6.5rem;
@@ -106,6 +110,9 @@
     height: 100%;
     background: linear-gradient(to right, #4f9beb 0%, rgb(230, 69, 69) 100%);
     transition: width 0.3s ease-in-out;
+  }
+  .newBudget{
+    flex: 50%;
   }
   
 

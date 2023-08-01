@@ -1,5 +1,5 @@
 
-.Main{
+.MainDashboard{
     display:flex ;
     flex-direction: row;
     background-color: #f3eeee;
@@ -95,3 +95,8 @@
     display: flex;
     justify-content: space-between;
 } 
+@media(max-width: 768px) {
+    .MainDashboard{
+        flex-direction: column;
+    }
+}

@@ -5,27 +5,46 @@ import {Expenses} from '../components/Expenses'
 import {Dashboard} from '../components/Dashboard'
 import LeftMenu from './leftMenu'
 import { useActionData } from 'react-router-dom'
-
+import { FaBars } from "react-icons/fa";
 
 
 
 
 export const Homepage = () => {
   const [activeComponent, setActiveComponent]=useState('Dashboard');
+  const [isMenuOpen,setIsMenuOpen] = useState(false)
+  const [incomeValue, setIncomeValue] = useState('');
+  const [totalExpenses, setTotalExpenses] = useState(0);
+
   const handleMenuClick = (componentName) => {
     setActiveComponent(componentName);
   };
+
+  const handleClick = ()=>{
+    setIsMenuOpen(!isMenuOpen)
+    console.log("show side bar")
+  }
+
   return (
-    <div className='home'>
-      <div className='home-container'>
-      <LeftMenu onMenuClick={handleMenuClick}/>
-      <div className='components'>
+    <div className="mainHome">
+      <div className="navBar">
+        <h2>Expenso</h2>
+        <button className='bar' onClick={handleClick}>
+          <FaBars/>
+        </button></div>
+      <div className='home'>
+       <div className='home-container'>
+       <LeftMenu onMenuClick={handleMenuClick} isMenuOpen={isMenuOpen}/>
+       <div className='components'>
           {activeComponent === 'Dashboard' && <Dashboard />}
-          {activeComponent === 'Budget' && <Budget />}
-          {activeComponent === 'Expenses' && <Expenses />}   
-      </div>
-      </div>
+          {activeComponent === 'Budget' && <Budget incomeValue={incomeValue} setIncomeValue={setIncomeValue}/>}
+          {activeComponent === 'Expenses' && <Expenses totalExpenses={totalExpenses} setTotalExpenses={setTotalExpenses}/>}   
+        
+       </div>
+       </div>
       
+      </div>
     </div>
+    
   )
 }

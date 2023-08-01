@@ -73,13 +73,16 @@
     cursor: pointer;
 }
 .user .details {
+   
+    margin: 1.5rem 0 0 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 .user img{
-    border-radius: 32px;
+    border-radius: 35px;
     background-color:white;
 }
 button{
@@ -101,6 +104,12 @@ button{
     font-size: 1.1rem;
     border-radius: 32px;
 }
+.navBar{
+    display: none;
+}
+
+
+
 
 
 /* Styles for smaller screens - Mobile Layout */
@@ -113,10 +122,26 @@ button{
   .left {
     border-radius: 0px;
     flex:none;
-    width:auto;
     border: none;
     border-bottom: solid 3px white;
-    /* display: none; */
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    z-index: 2;
+    background-color: #f3f1f1;
+    border: solid 3px white;
+    padding: 1rem;
+    width: 70%; 
+    height: 100vh;
+    margin: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  .left.active{
+    display: block;
+    transform: translateX(0%);
+    transition: transform 0.3s ease;
   }
 
   .components {
@@ -127,10 +152,26 @@ button{
     border-top: solid 3px white;
     padding-top: 1rem;
   }
-  .left{
-    position:absolute;
-    height: 100vh;
-    z-index: 2;
-  }
+
+ .navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position:fixed;
+    width: 100%;
+    background-color: aquamarine;
+    top: 0;
+    height: 45px;
+ }
+ .bar{
+    font-size: 1.3rem;
+    background: none;
+    background-color: transparent;
+ }
+ 
+ .mainHome {
+  overflow-x: hidden;
+}
+
   
 }
