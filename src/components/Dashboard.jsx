@@ -62,7 +62,7 @@ export const Dashboard = () => {
         
       </div>
       <div className='r-dashboard'>
-          <h2>Recent History</h2>
+          <h3>Recent History</h3>
           <div className='salary-expense'>
             <Spendings spendingsname="Dentist Appointment" spendingsamount={300}/>
             <Salaryexpense name ="Salary" minamount={22} maxamount={22}/>
