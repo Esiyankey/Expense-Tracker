@@ -12,7 +12,11 @@ import { MDBBtn } from 'mdb-react-ui-kit';
 
 
 
-const LeftMenu = ({onMenuClick,isMenuOpen}) => {
+
+
+
+
+export const LeftMenu = ({onMenuClick,isMenuOpen}) => {
 
   const navigate=useNavigate();
   const auth = getAuth(app)
@@ -63,5 +67,4 @@ const LeftMenu = ({onMenuClick,isMenuOpen}) => {
         );
     };
     
-    export default LeftMenu;
     
