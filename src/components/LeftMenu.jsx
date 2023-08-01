@@ -50,10 +50,10 @@ const LeftMenu = ({onMenuClick,isMenuOpen}) => {
                 </ul>
               </div>
             </div>
-            
              <button className="sign-out" onClick={handleLogOut}>
                 <FaSignOutAlt />Sign Out
              </button>
+            
           
           </div>
         );
