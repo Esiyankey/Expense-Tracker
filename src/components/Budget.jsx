@@ -225,7 +225,7 @@ export const Budget = ({incomeValue,setIncomeValue}) => {
           <ul>
               {budgetsArray.map((items, index) => (
                     <li key={index} className='title-percentages'>
-                      <h3>{items.Title}</h3>
+                      <h4>{items.Title}</h4>
                       <p>{(items.Value/100)*parseFloat(items.Income)}</p>
                     </li>
                   ))}

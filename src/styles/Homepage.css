@@ -17,10 +17,9 @@
 }
 .home{
     height: 100vh;
-    /* background-color: #f3efeff1; */
-    /* background-color: white; */
-    background: linear-gradient(to bottom, #87CEFA, #ADD8E6, #87CEFA);
-    /* background-image: url('../assets/bg.png'); */
+    /* background: linear-gradient(to bottom, #87CEFA, #ADD8E6, #87CEFA); */
+    background: linear-gradient(to bottom, #007BFF, #00BFFF, #87CEFA);
+
     display: flex;
 
 }
@@ -112,7 +111,7 @@ button:hover{
     font-size: 1.1rem;
     border-radius: 32px;
 }
-.navBar{
+.mobileNavBar{
     display: none;
 }
 
@@ -133,11 +132,11 @@ button:hover{
     flex-direction: column;
     gap: 12rem;
     position: absolute;
-    top: 45px;
+    top: 44px;
     left: 0;
     z-index: 2;
     border: solid 3px white;
-    width: 50%; 
+    width: 70%; 
     height: 100vh;
     margin: 0;
     transform: translateX(-100%);
@@ -149,6 +148,8 @@ button:hover{
     transition: transform 0.4s ease;
     display: flex;
     flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    border-top: solid 1px #bdb9b9e2;
   }
   
 
@@ -162,17 +163,18 @@ button:hover{
     padding-top: 1rem;
   }
 
- .navBar{
+ .mobileNavBar{
     display: flex;
     justify-content: space-between;
     align-items: center;
     position:fixed;
     width: 100%;
-    background-color: aquamarine;
+    background-color: white;
     top: 0;
     height: 45px;
+    z-index: 4;
  }
- .bar{
+ .mobileBar{
     font-size: 1.3rem;
     background: none;
     background-color: transparent;
