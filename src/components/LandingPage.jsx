@@ -5,6 +5,14 @@ import { Footer } from './footer'
 
 export const LandingPage = () => {
   const [showLinks, setShowLinks] = useState(false);
+  const [showModal, setshowModal] = useState(false);
+  const handleCloseModal = () => {
+    setshowModal(false);
+  };
+
+  const handleShowModal = () => {
+    setshowModal(true);
+  };
 
   const handleShowLinks = () => {
     setShowLinks(true);
@@ -17,8 +25,8 @@ export const LandingPage = () => {
 
   return (
     <div>
-      <Navbar handleShowLinks={handleShowLinks} handleCloseLinks={handleCloseLinks} showLinks={showLinks}/>
-      <Landing showLinks={showLinks}/>
+      <Navbar handleCloseModal={handleCloseModal} showModal={showModal} handleShowModal={handleShowModal} handleShowLinks={handleShowLinks} handleCloseLinks={handleCloseLinks} showLinks={showLinks}/>
+      <Landing handleShowModal={handleShowModal} handleCloseLinks={handleCloseLinks} handleCloseModal={handleCloseModal} showLinks={showLinks} showModal={showModal} />
       <Footer />
     </div>
   );

@@ -4,16 +4,9 @@ import { AiOutlineClose } from "react-icons/ai";
 import "../styles/navbar.css";
 import { Modal } from "./Modal";
 
-export const Navbar = ({ handleShowLinks, handleCloseLinks, showLinks }) => {
+export const Navbar = ({ handleShowLinks, handleCloseLinks, showLinks,handleCloseModal,handleShowModal,showModal }) => {
   const [scroll, setScroll] = useState(false);
-  const [showModal, setshowModal] = useState(false);
-  const handleCloseModal = () => {
-    setshowModal(false);
-  };
-
-  const handleShowModal = () => {
-    setshowModal(true);
-  };
+  
 
   useEffect(() => {
     const handleScroll = () => {
