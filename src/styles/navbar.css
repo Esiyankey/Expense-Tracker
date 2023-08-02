@@ -24,7 +24,7 @@ h2 {
 
 .Navbar {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: 70px;
   background-color: white;
@@ -190,8 +190,9 @@ font-size: 1.4rem;
 color: #64befa;
 }
 @media screen and (min-width: 800px) {
-  .navbar {
+  .Navbar {
     justify-content: space-around;
+    align-items: center;
     padding: 0;
     z-index: 10;
   }

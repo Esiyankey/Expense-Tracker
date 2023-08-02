@@ -73,7 +73,7 @@ p {
   background-color: #5d8dfe;
   
 }
-.link{
+.showlinks.link{
   transition: 0.5s;
   left: 0;
 }

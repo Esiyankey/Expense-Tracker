@@ -61,7 +61,7 @@ export const Landing = ({ showLinks,handleShowModal,handleCloseLinks}) => {
         </div>
       </div>
       {showLinks && (
-          <div onBlur={handleCloseLinks} className={`showlinks ${showLinks?"link":""}`}>
+          <div  className={`showlinks ${showLinks?"link":""}`}>
             <ul>
               <li>
                 <AiOutlineHome className="icon"/>
