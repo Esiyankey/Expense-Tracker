@@ -66,12 +66,7 @@
     margin-top: 0.8rem;
 }
 
-.leftButton{
-    font-size: 1rem;
-    display: flex;
-    gap: 0.3rem;
-    width: 7rem;
-}
+
 .leftButton:hover{
     cursor: pointer;
 }
@@ -96,6 +91,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1rem;
+    gap: 0.3rem;
 }
 .leftButton:hover{
     cursor: pointer;
@@ -153,6 +150,7 @@
 
 
   .components {
+    margin-top: 1.2rem;
     border-radius: 0;
     flex: none;
     width: 100%;
@@ -173,9 +171,14 @@
     z-index: 4;
  }
  .mobileBar{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    margin-right: 10px;
     background: none;
     background-color: transparent;
+    border: none;
+ }
+ .mobileBar:hover{
+    color: #7fcee8;
  }
  
  .mainHome {
