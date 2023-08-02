@@ -58,7 +58,7 @@ export const LeftMenu = ({onMenuClick,isMenuOpen}) => {
                 </ul>
               </div>
             </div>
-             <MDBBtn onClick={handleLogOut} rounded  color='info'>
+             <MDBBtn onClick={handleLogOut} rounded className="sign-out" color='info'>
                 <FaSignOutAlt />Sign Out
              </MDBBtn>
              {/* className='mx-2' */}
