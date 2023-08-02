@@ -35,13 +35,12 @@ export const Modal = ({ handleCloseModal }) => {
   };
   const handleSignUp = async () => {
     try {
-      const userCredentials = await createUserWithEmailAndPassword(
+       await createUserWithEmailAndPassword(
         auth,
         signupEmail,
         signupPassword
       );
       console.log("signed up");
-      const user = userCredentials.user;
       navigate("/home");
     } catch (error) {
       alert("error");
@@ -67,7 +66,7 @@ export const Modal = ({ handleCloseModal }) => {
             <div className="underline"></div>
             <form>
               <label htmlFor="Full name ">Full Name</label>
-              <input type="text" placeholder="Grace" />
+              <input type="text" placeholder="Grace" className="signup-input" />
               <label className="label" htmlFor="email">
                 Email
               </label>
@@ -128,6 +127,7 @@ export const Modal = ({ handleCloseModal }) => {
                 onChange={(e) => {
                   setLoginEmail(e.target.value);
                 }}
+                className="signup-input"
               />
               <label className="label" htmlFor="password">
                 Password
@@ -138,6 +138,7 @@ export const Modal = ({ handleCloseModal }) => {
                 onChange={(e) => {
                   setLoginPassword(e.target.value);
                 }}
+                className="signup-input"
               />
               <button className="loginbtn" onClick={handleLogin}>
                 Log in
