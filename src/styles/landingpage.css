@@ -73,10 +73,8 @@ p {
   background-color: #5d8dfe;
   
 }
-
-.link{
-  /* transition: 0.5s; */
-  
+.showlinks.link{
+  transition: 0.5s;
   left: 0;
 }
 .showlinks ul{
