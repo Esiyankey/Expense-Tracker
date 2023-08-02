@@ -8,7 +8,7 @@ import {BsPersonWorkspace,BsRocketTakeoff,BsInfoCircle} from "react-icons/bs"
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-export const Landing = ({ showLinks }) => {
+export const Landing = ({ showLinks,handleShowModal,handleCloseLinks}) => {
 
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export const Landing = ({ showLinks }) => {
               Expenso analyzes your spending and automatically saves the perfect
               amount everyday so that you don't have to think about it.
             </p>
-            <button className="free-button">SIGN UP FOR FREE</button>
+            <button className="free-button" onClick={handleShowModal}>SIGN UP FOR FREE</button>
           </div>
           <div className="image" data-aos="fade-left">
             <img src={image} alt="a dummy image here" />
@@ -61,7 +61,7 @@ export const Landing = ({ showLinks }) => {
         </div>
       </div>
       {showLinks && (
-          <div className={`showlinks ${showLinks?"link":""}`}>
+          <div onBlur={handleCloseLinks} className={`showlinks ${showLinks?"link":""}`}>
             <ul>
               <li>
                 <AiOutlineHome className="icon"/>
@@ -77,7 +77,7 @@ export const Landing = ({ showLinks }) => {
               </li>
               <li>
                 <BsRocketTakeoff className="icon"/>
-                <a href="#">Get Started</a>
+                <a href="#" onClick={handleShowModal}>Get Started</a>
               </li>
             </ul>
            
