@@ -171,9 +171,14 @@
     z-index: 4;
  }
  .mobileBar{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    margin-right: 10px;
     background: none;
     background-color: transparent;
+    border: none;
+ }
+ .mobileBar:hover{
+    color: #7fcee8;
  }
  
  .mainHome {
