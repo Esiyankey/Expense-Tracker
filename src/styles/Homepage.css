@@ -91,14 +91,14 @@
     border-radius: 35px;
     background-color:rgb(244, 239, 239);
 }
-button{
+.leftButton{
     padding:0.3rem;
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-button:hover{
+.leftButton:hover{
     cursor: pointer;
     background-color: #7fcee8;
     color: white;
