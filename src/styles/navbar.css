@@ -145,7 +145,7 @@ form{
 }
 .signup-input {
   border: 2.24px solid #f6f6f6;
-  margin-bottom: 1.2rem;
+  /* margin-bottom: 1.2rem; */
   border-radius:10px ;
   width: 100%;
   padding: 0.5rem 0.9rem;
