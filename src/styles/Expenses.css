@@ -24,7 +24,7 @@
 }
 form input{
     display: block;
-    margin: 0.9rem 0rem;
+    /* margin: 0.9rem 0rem; */
     border-radius: 0.6rem;
     border:solid 3px white;
     padding: 0.3rem 2rem;
