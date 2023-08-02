@@ -100,7 +100,7 @@ h2 {
   width: 23rem;
   padding: 2rem;
 }
-.top {
+.modal-top {
   display: flex;
   justify-content: space-between;
   align-items: center;

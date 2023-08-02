@@ -53,7 +53,7 @@ export const Modal = ({ handleCloseModal }) => {
       <div className="login">
         {showSignUp ? (
           <>
-            <div className="top">
+            <div className="modal-top">
               <h3 className="log">Sign Up</h3>
               <div className="close" onClick={handleCloseModal}>
                 <AiOutlineClose />
@@ -104,7 +104,7 @@ export const Modal = ({ handleCloseModal }) => {
           </>
         ) : (
           <>
-            <div className="top">
+            <div className="modal-top">
               <h3 className="log">Log in </h3>
               <div className="close" onClick={handleCloseModal}>
                 <AiOutlineClose />
