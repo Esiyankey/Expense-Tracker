@@ -53,7 +53,7 @@ export const Modal = ({ handleCloseModal }) => {
       <div className="login">
         {showSignUp ? (
           <>
-            <div className="top">
+            <div className="modal-top">
               <h3 className="log">Sign Up</h3>
               <div className="close" onClick={handleCloseModal}>
                 <AiOutlineClose />
@@ -77,6 +77,7 @@ export const Modal = ({ handleCloseModal }) => {
                 onChange={(e) => {
                   setSignupEmail(e.target.value);
                 }}
+                className="signup-input"
               />
               <label className="label" htmlFor="password">
                 Password
@@ -88,6 +89,7 @@ export const Modal = ({ handleCloseModal }) => {
                 onChange={(e) => {
                   setSignupPassword(e.target.value);
                 }}
+                className="signup-input"
               />
               <button className="loginbtn" onClick={handleSignUp}>
                 Sign Up
@@ -104,7 +106,7 @@ export const Modal = ({ handleCloseModal }) => {
           </>
         ) : (
           <>
-            <div className="top">
+            <div className="modal-top">
               <h3 className="log">Log in </h3>
               <div className="close" onClick={handleCloseModal}>
                 <AiOutlineClose />

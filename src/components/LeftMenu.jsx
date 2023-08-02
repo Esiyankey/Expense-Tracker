@@ -8,11 +8,15 @@ import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { MDBBtn } from 'mdb-react-ui-kit';
+// import { MDBBtn } from 'mdb-react-ui-kit';
 
 
 
-const LeftMenu = ({onMenuClick,isMenuOpen}) => {
+
+
+
+
+export const LeftMenu = ({onMenuClick,isMenuOpen}) => {
 
   const navigate=useNavigate();
   const auth = getAuth(app)
@@ -54,14 +58,13 @@ const LeftMenu = ({onMenuClick,isMenuOpen}) => {
                 </ul>
               </div>
             </div>
-             <MDBBtn onClick={handleLogOut} rounded className='mx-2' color='info'>
+             {/* <MDBBtn onClick={handleLogOut} rounded className='mx-2' color='info'>
                 <FaSignOutAlt />Sign Out
-             </MDBBtn>
+             </MDBBtn> */}
             
           
           </div>
         );
     };
     
-    export default LeftMenu;
     

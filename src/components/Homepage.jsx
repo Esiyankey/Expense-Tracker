@@ -3,7 +3,7 @@ import '../styles/Homepage.css'
 import { Budget } from '../components/Budget'
 import {Expenses} from '../components/Expenses'
 import {Dashboard} from '../components/Dashboard'
-import LeftMenu from './leftMenu'
+import {LeftMenu} from './LeftMenu'
 import { useActionData } from 'react-router-dom'
 import { FaBars } from "react-icons/fa";
 

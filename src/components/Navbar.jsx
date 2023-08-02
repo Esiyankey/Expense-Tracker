@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import "../styles/navbar.css";
-import { Modal } from "./modal";
+import { Modal } from "./Modal";
 
 export const Navbar = ({ handleShowLinks, handleCloseLinks, showLinks }) => {
   const [scroll, setScroll] = useState(false);
