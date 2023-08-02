@@ -22,7 +22,7 @@
 .expenses-inputs,.expenses{
     flex: 50%;
 }
-form input{
+.expenses-inputs input{
     display: block;
     /* margin: 0.9rem 0rem; */
     border-radius: 0.6rem;
@@ -31,10 +31,10 @@ form input{
     background: none;
     color:rgb(163, 160, 160);
 }
-form input::placeholder{
+.expenses-inputs input::placeholder{
     color:gray;
 }
-form input :focus{
+.expenses-inputs input :focus{
     border:solid 3px rgb(251, 251, 251);
     background-color: aliceblue;
 }
