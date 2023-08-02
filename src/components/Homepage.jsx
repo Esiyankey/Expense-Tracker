@@ -27,9 +27,9 @@ export const Homepage = () => {
 
   return (
     <div className="mainHome">
-      <div className="navBar">
+      <div className="mobileNavBar">
         <h2>Expenso</h2>
-        <button className='bar' onClick={handleClick}>
+        <button className='mobileBar' onClick={handleClick}>
           <FaBars/>
         </button></div>
       <div className='home'>

@@ -53,23 +53,48 @@
   border-radius: 0.6rem;
 }
 .newBudget{
-  background-color:white;
+  /* background-color:white;
   border-radius: 0.6rem;
-  padding: 1rem;
+  padding: 1rem; */
+  background-color:  #f3eeee;
 }
 .title-percentages{
-  background-color: #e3d9d9;
+  /* background-color: #e3d9d9;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: solid 2px #ccc;
   padding: 0.8rem;
   margin-bottom: 0.2rem;
-  border-radius:0.6rem;
+  border-radius:0.6rem; */
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0.6rem;
+    background-color: white;
 }
-.title-percentages p,h3{
+
+.newBudget ul {
+  list-style: none;
   padding: 0;
   margin: 0;
+}
+.newBudget ul li{
+  font-size: 13px;
+  padding: 0  0.3rem;
+  margin: 0.4rem;
+}
+.newBudget ul li:hover{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.title-percentages p{
+  padding: 0;
+  margin: 0;
+  color: black;
+}
+.title-percentages h4{
+  color: #007bff;
 }
 
 .createBudget{

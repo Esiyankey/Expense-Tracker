@@ -47,13 +47,13 @@ export const LeftMenu = ({onMenuClick,isMenuOpen}) => {
               <div className='navigations'>
                 <ul>
                   <li>
-                    <button onClick={()=>onMenuClick('Dashboard')}><GoGraph />Dashboard</button>
+                    <button className="leftButton" onClick={()=>onMenuClick('Dashboard')}><GoGraph />Dashboard</button>
                   </li>
                   <li>
-                  <button onClick={()=>onMenuClick('Budget')}>Budget</button>
+                  <button className="leftButton" onClick={()=>onMenuClick('Budget')}>Budget</button>
                   </li>
                   <li>
-                  <button onClick={()=>onMenuClick('Expenses')}>Expenses</button>
+                  <button className="leftButton" onClick={()=>onMenuClick('Expenses')}>Expenses</button>
                   </li>
                 </ul>
               </div>
