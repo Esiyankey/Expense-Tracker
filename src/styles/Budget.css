@@ -53,20 +53,9 @@
   border-radius: 0.6rem;
 }
 .newBudget{
-  /* background-color:white;
-  border-radius: 0.6rem;
-  padding: 1rem; */
   background-color:  #f3eeee;
 }
 .title-percentages{
-  /* background-color: #e3d9d9;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: solid 2px #ccc;
-  padding: 0.8rem;
-  margin-bottom: 0.2rem;
-  border-radius:0.6rem; */
     margin-bottom: 20px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -97,11 +86,21 @@
   color: #007bff;
 }
 
-.createBudget{
-  width: 6.5rem;
-  padding: 0.8rem;
+.createBudget .createButton,.addButton button{
+  padding:0.5rem;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    gap: 0.3rem;
 }
-
+.createBudget .createButton:hover, .addButton button:hover{
+  cursor: pointer;
+  background-color: #7fcee8;
+  color: white;
+  transition: 0.2s ease;
+}
 
 .error-message {
   color: red;
