@@ -29,7 +29,7 @@ export const Landing = ({ showLinks }) => {
               Expenso analyzes your spending and automatically saves the perfect
               amount everyday so that you don't have to think about it.
             </p>
-            <button className="button">SIGN UP FOR FREE</button>
+            <button className="free-button">SIGN UP FOR FREE</button>
           </div>
           <div className="image" data-aos="fade-left">
             <img src={image} alt="a dummy image here" />
