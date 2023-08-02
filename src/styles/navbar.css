@@ -24,7 +24,7 @@ h2 {
 
 .Navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   height: 70px;
   background-color: white;
