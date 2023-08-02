@@ -61,9 +61,6 @@ export const LeftMenu = ({onMenuClick,isMenuOpen}) => {
              <MDBBtn onClick={handleLogOut} rounded className="sign-out" color='info'>
                 <FaSignOutAlt />Sign Out
              </MDBBtn>
-             {/* className='mx-2' */}
-            
-          
           </div>
         );
     };
