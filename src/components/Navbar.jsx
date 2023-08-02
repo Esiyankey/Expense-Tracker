@@ -36,7 +36,7 @@ export const Navbar = ({ handleShowLinks, handleCloseLinks, showLinks }) => {
   return (
     <>
       {showModal && <Modal handleCloseModal={handleCloseModal} />}
-      <div className={`navbar ${scroll ? "navbar-active" : ""}`}>
+      <div className={`Navbar ${scroll ? "navbar-Active" : ""}`}>
         <div className="logo">
           <h2>Expense</h2>
         </div>

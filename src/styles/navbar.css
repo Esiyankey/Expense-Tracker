@@ -22,7 +22,7 @@ h2 {
   font-size: 1.5rem;
 }
 
-.navbar {
+.Navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,7 +37,7 @@ h2 {
   z-index: 10;
   transition: 0.3 ease;
 }
-.navbar-active {
+.navbar-Active {
   background-color: #f4fafe;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
@@ -147,8 +147,8 @@ form{
   border: 2.24px solid #f6f6f6;
   margin-bottom: 1.2rem;
   border-radius:10px ;
-  width: 90%;
-  padding: 0.7rem 0.9rem;
+  width: 100%;
+  padding: 0.5rem 0.9rem;
   display: block;
 }
 .signup-input:focus{
