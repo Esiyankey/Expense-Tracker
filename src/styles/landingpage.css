@@ -30,8 +30,8 @@ p {
 .text {
   max-width: 35rem;
 }
-.button {
-  padding: 1.1rem 3rem;
+.free-button {
+  padding: 0.8rem 2.6rem;
   border-radius: 30px;
   background-color: #5d8dfe;
   color: white;
