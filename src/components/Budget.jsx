@@ -1,21 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useMemo } from 'react';
 import '../styles/Budget.css';
 import {db} from '../config/firebase'
 import { doc,onSnapshot,collection,setDoc} from 'firebase/firestore';
 
 
 
-export const Budget = ({incomeValue,setIncomeValue}) => {
+export const Budget = ({incomeValue,setIncomeValue,totalBudget,setTotalBudget}) => {
   const MAX_PERCENTAGE = 100;
   const [percentagesArray, setPercentageArray] = useState([]);
   const [percentageValue, setPercentageValue] = useState('');
   const [percentageTitle, setPercentageTitle] = useState('');
   const [percentageTracker, setPercentageTracker] = useState(0);
   const [inputError, setInputError] = useState('');
-
   const [incomeInputError, setIncomeInputError] = useState('');
   const [budgetsArray,setBudgetsArray] = useState([])
 
+
+
+  
 
   // Event handler for percentage value input
   const percentageValueEvent = (e) => {
@@ -29,7 +31,7 @@ export const Budget = ({incomeValue,setIncomeValue}) => {
     setInputError('');
   };
 
-  // // Event handler for income value input
+  // Event handler for income value input
   // const handleIncomeValueChange = (e) => {
   //   const input = e.target.value;
   //   const isValidInput = /^\d*\.?\d*$/.test(input);
@@ -68,9 +70,9 @@ export const Budget = ({incomeValue,setIncomeValue}) => {
 
     setPercentageArray([...percentagesArray, newPercentageObject]);
     setPercentageTracker(newTotalPercentage);
-    setPercentageValue('');
-    setPercentageTitle('');
+
   };
+  
 
   // Calculate the total percentage when percentagesArray changes
   useEffect(() => {
@@ -96,7 +98,7 @@ export const Budget = ({incomeValue,setIncomeValue}) => {
     if (percentageTitle.trim() !== "" && percentageValue.trim() !== "") {
       try {
         //init new doc
-   
+
         const newDoc = doc(collection(db, "Budget"));
         const newBudget = {
           id:newDoc.id,
@@ -107,7 +109,10 @@ export const Budget = ({incomeValue,setIncomeValue}) => {
           
         };
         await setDoc(newDoc, newBudget);
+        setPercentageValue('');
+        setPercentageTitle('');
         alert('Budget added successfully.');
+
       } catch (e) {
         alert(" Error adding budget");
         console.error("Error adding document: ", e);
@@ -116,6 +121,26 @@ export const Budget = ({incomeValue,setIncomeValue}) => {
     }
     
   }
+
+
+
+
+
+  const calculateTotalBudget = () => {
+    let total = 0;
+    for (const Budget of budgetsArray) {
+      total += parseFloat(Budget.Value);
+    }
+    return total;
+  };
+  // Memoize the total expenses calculation using useMemo
+  const totalBudgetMemo = useMemo(() => calculateTotalBudget(), [budgetsArray]);
+
+
+
+
+
+
 
   useEffect(()=>{
     const fetchBudget=async()=>{
@@ -131,6 +156,11 @@ export const Budget = ({incomeValue,setIncomeValue}) => {
     fetchBudget();
   },[])
 
+  useEffect(() => {
+    setTotalBudget(totalBudgetMemo);
+  }, [totalBudgetMemo, setTotalBudget]);
+
+
 
   return (
       <div className='Main'>
@@ -138,7 +168,7 @@ export const Budget = ({incomeValue,setIncomeValue}) => {
         <div className='balance'>
           <h3>Total Income:</h3>
           {/* Use toFixed(2) to display totalIncome with 2 decimal places */}
-          {`$${parseFloat(incomeValue).toFixed(2)}`}
+          {incomeValue}
         </div>
     
         <div className='bottom'>

@@ -1,7 +1,7 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState,useEffect,useMemo } from 'react';
 import '../styles/Expenses.css';
 import {db} from '../config/firebase'
-import { doc,onSnapshot,collection,setDoc, Timestamp,deleteDoc} from 'firebase/firestore';
+import { doc,onSnapshot,collection,setDoc, Timestamp,deleteDoc, updateDoc} from 'firebase/firestore';
 import { MdDeleteForever} from 'react-icons/md';
 
 
@@ -20,21 +20,32 @@ export const Expenses = ({totalExpenses,setTotalExpenses}) => {
     }
     return total;
   };
+
+  // Memoize the total expenses calculation using useMemo
+  const totalExpensesMemo = useMemo(() => calculateTotalExpenses(), [expensesArray]);
   
   useEffect(()=>{
     const fetchExpenses=async()=>{
       const expenseCollection= collection(db,'expense');
       onSnapshot(expenseCollection,(querySnapshot)=>{
         const expenseArray =[];
-        querySnapshot.forEach((doc)=>{expenseArray.push(doc.data())});
+        querySnapshot.forEach((doc)=>{
+          expenseArray.push(doc.data())
+        });
         setExpensesArray(expenseArray);
-        const total = calculateTotalExpenses();
-      setTotalExpenses(total);
       });
     };
     fetchExpenses();
   },[])
   
+  useEffect(() => {
+    setTotalExpenses(totalExpensesMemo);
+  }, [totalExpensesMemo, setTotalExpenses]);
+
+
+
+
+
   const formatDate = (timestamp) => {
     if (timestamp) {
       const date = timestamp.toDate();
@@ -77,12 +88,14 @@ export const Expenses = ({totalExpenses,setTotalExpenses}) => {
           Amount: expensesAmount,
           Date : Timestamp.fromDate(new Date(expensesDate)),
           deleted: false,
-          
+
         };
        
   
         await setDoc(newDoc, newExpense);
-        alert('Expense added successfully.');
+        setExpensesAmount("");
+        setExpensesTitle("");
+        setExpensesDate("")
       } catch (e) {
         alert(" Error adding expenses");
         console.error("Error adding document: ", e);
@@ -92,8 +105,7 @@ export const Expenses = ({totalExpenses,setTotalExpenses}) => {
   }
   const deleteForever = async (noteId) => {
     try {
-      const expenseRef = doc(db, "expense", noteId);
-      await deleteDoc(expenseRef);
+      await deleteDoc(doc(db, "expense", noteId));
       console.log("Expense deleted successfully!");
     } catch (error) {
       console.error("Error deleting expense:", error);
@@ -108,7 +120,7 @@ export const Expenses = ({totalExpenses,setTotalExpenses}) => {
       {/* Display total expenses */}
       <div className='expenses-results'>
         <h3>Total Expenses:</h3>
-        <h5>{`$${parseFloat(totalExpenses).toFixed(2)}`}</h5>
+        <h5>{totalExpenses}</h5>
       </div>
 
       <div className='bottom'>
@@ -154,7 +166,7 @@ export const Expenses = ({totalExpenses,setTotalExpenses}) => {
                 <div className="date">
                 <div className="delete">
                 Date: {formatDate(expense.Date)}
-                <button onClick={deleteForever}><MdDeleteForever/></button>
+                <button className='deleteButton' onClick={() => deleteForever(expense.id)}><MdDeleteForever/></button>
                 </div>
                 </div>
                

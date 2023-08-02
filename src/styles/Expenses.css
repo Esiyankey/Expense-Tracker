@@ -74,12 +74,18 @@ button{
     display: flex;
     justify-content: space-between;
   }
-  .delete button{
+  .deleteButton{
+    border: none;
     background:none;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
-  .delete button:hover{
+  .deleteButton:hover{
     background-color:#f3eeee;
-    border-radius: 45%;
+    border-radius: 40%;
     color: black;
+  }
+  @media (max-width: 884px) {
+    .bottom{
+      flex-direction: column;
+    }
   }

@@ -13,8 +13,9 @@ import { FaBars } from "react-icons/fa";
 export const Homepage = () => {
   const [activeComponent, setActiveComponent]=useState('Dashboard');
   const [isMenuOpen,setIsMenuOpen] = useState(false)
-  const [incomeValue, setIncomeValue] = useState('');
+  const [incomeValue, setIncomeValue] = useState(0);
   const [totalExpenses, setTotalExpenses] = useState(0);
+  const [totalBudget,setTotalBudget] =useState(0)
 
   const handleMenuClick = (componentName) => {
     setActiveComponent(componentName);
@@ -36,8 +37,8 @@ export const Homepage = () => {
        <div className='home-container'>
        <LeftMenu onMenuClick={handleMenuClick} isMenuOpen={isMenuOpen}/>
        <div className='components'>
-          {activeComponent === 'Dashboard' && <Dashboard />}
-          {activeComponent === 'Budget' && <Budget incomeValue={incomeValue} setIncomeValue={setIncomeValue}/>}
+          {activeComponent === 'Dashboard' && <Dashboard incomeValue={incomeValue} totalExpenses={totalExpenses} percentageLeft={totalBudget} setPercentageLeft={setTotalBudget}/>}
+          {activeComponent === 'Budget' && <Budget incomeValue={incomeValue} setIncomeValue={setIncomeValue} totalBudget={totalBudget} setTotalBudget={setTotalBudget} />}
           {activeComponent === 'Expenses' && <Expenses totalExpenses={totalExpenses} setTotalExpenses={setTotalExpenses}/>}   
         
        </div>
