@@ -58,7 +58,7 @@ export const Navbar = ({ handleShowLinks, handleCloseLinks, showLinks }) => {
             </li>
           </ul>
           <div className="right-navbar">
-            <button className="btn" onClick={handleShowModal}>
+            <button className="getStarted-btn" onClick={handleShowModal}>
               Get started
             </button>
           </div>
