@@ -93,8 +93,7 @@ export const Expenses = ({totalExpenses,setTotalExpenses}) => {
   const deleteForever = async (noteId) => {
     try {
       const expenseRef = doc(db, "expense", noteId);
-      const expenseString = String(expenseRef);
-      await deleteDoc(expenseString);
+      await deleteDoc(expenseRef);
       console.log("Expense deleted successfully!");
     } catch (error) {
       console.error("Error deleting expense:", error);

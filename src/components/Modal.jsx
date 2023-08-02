@@ -77,6 +77,7 @@ export const Modal = ({ handleCloseModal }) => {
                 onChange={(e) => {
                   setSignupEmail(e.target.value);
                 }}
+                className="signup-input"
               />
               <label className="label" htmlFor="password">
                 Password
@@ -88,6 +89,7 @@ export const Modal = ({ handleCloseModal }) => {
                 onChange={(e) => {
                   setSignupPassword(e.target.value);
                 }}
+                className="signup-input"
               />
               <button className="loginbtn" onClick={handleSignUp}>
                 Sign Up
