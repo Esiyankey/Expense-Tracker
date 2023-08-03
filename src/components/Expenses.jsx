@@ -1,18 +1,17 @@
-import React, { useState,useEffect,useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import '../styles/Expenses.css';
-import {db} from '../config/firebase'
-import { doc,onSnapshot,collection,setDoc, Timestamp,deleteDoc, updateDoc} from 'firebase/firestore';
-import { MdDeleteForever} from 'react-icons/md';
+import { db } from '../config/firebase';
+import { doc, onSnapshot, collection, setDoc, Timestamp, deleteDoc, updateDoc } from 'firebase/firestore';
+import { MdDeleteForever } from 'react-icons/md';
 
-
-export const Expenses = ({totalExpenses,setTotalExpenses}) => {
+export const Expenses = ({ totalExpenses, setTotalExpenses }) => {
   // State variables to manage the expenses and their total
-  
   const [expensesTitle, setExpensesTitle] = useState('');
   const [expensesAmount, setExpensesAmount] = useState('');
   const [expensesDate, setExpensesDate] = useState('');
   const [expensesArray, setExpensesArray] = useState([]);
-  
+
+  // Function to calculate the total expenses
   const calculateTotalExpenses = () => {
     let total = 0;
     for (const expense of expensesArray) {
@@ -23,37 +22,35 @@ export const Expenses = ({totalExpenses,setTotalExpenses}) => {
 
   // Memoize the total expenses calculation using useMemo
   const totalExpensesMemo = useMemo(() => calculateTotalExpenses(), [expensesArray]);
-  
-  useEffect(()=>{
-    const fetchExpenses=async()=>{
-      const expenseCollection= collection(db,'expense');
-      onSnapshot(expenseCollection,(querySnapshot)=>{
-        const expenseArray =[];
-        querySnapshot.forEach((doc)=>{
-          expenseArray.push(doc.data())
+
+  // Fetch expenses data from Firestore on component mount
+  useEffect(() => {
+    const fetchExpenses = async () => {
+      const expenseCollection = collection(db, 'expense');
+      onSnapshot(expenseCollection, (querySnapshot) => {
+        const expenseArray = [];
+        querySnapshot.forEach((doc) => {
+          expenseArray.push(doc.data());
         });
         setExpensesArray(expenseArray);
       });
     };
     fetchExpenses();
-  },[])
-  
+  }, []);
+
+  // Update totalExpenses when totalExpensesMemo changes
   useEffect(() => {
     setTotalExpenses(totalExpensesMemo);
   }, [totalExpensesMemo, setTotalExpenses]);
 
-
-
-
-
+  // Function to format the date from Timestamp to a human-readable format
   const formatDate = (timestamp) => {
     if (timestamp) {
       const date = timestamp.toDate();
-      return date.toLocaleDateString(); 
+      return date.toLocaleDateString();
     }
     return "";
   };
-  
 
   // Event handler for expenses title input
   const expensesTitleEvent = (e) => {
@@ -70,8 +67,8 @@ export const Expenses = ({totalExpenses,setTotalExpenses}) => {
     setExpensesDate(event.target.value);
   };
 
-
-  const AddExpenses=async()=>{
+  // Function to add expenses to Firestore
+  const AddExpenses = async () => {
     if (expensesTitle.trim() !== "" && expensesAmount.trim() !== "") {
       try {
         const expenseAsNumber = parseFloat(expensesAmount);
@@ -79,33 +76,32 @@ export const Expenses = ({totalExpenses,setTotalExpenses}) => {
           alert('Please enter a valid expense amount.');
           return;
         }
-        //init new doc
-   
+        // Initialize a new document
         const newDoc = doc(collection(db, "expense"));
         const newExpense = {
-          id:newDoc.id,
+          id: newDoc.id,
           Title: expensesTitle,
           Amount: expensesAmount,
-          Date : Timestamp.fromDate(new Date(expensesDate)),
+          Date: Timestamp.fromDate(new Date(expensesDate)),
           deleted: false,
-
         };
-       
-  
+
+        // Set the new expense document in Firestore
         await setDoc(newDoc, newExpense);
         setExpensesAmount("");
         setExpensesTitle("");
-        setExpensesDate("")
+        setExpensesDate("");
       } catch (e) {
-        alert(" Error adding expenses");
+        alert("Error adding expenses");
         console.error("Error adding document: ", e);
       }
-      
     }
-  }
-  const deleteForever = async (noteId) => {
+  };
+
+  // Function to delete an expense from Firestore
+  const deleteForever = async (expenseId) => {
     try {
-      await deleteDoc(doc(db, "expense", noteId));
+      await deleteDoc(doc(db, "expense", expenseId));
       console.log("Expense deleted successfully!");
     } catch (error) {
       console.error("Error deleting expense:", error);
@@ -156,23 +152,22 @@ export const Expenses = ({totalExpenses,setTotalExpenses}) => {
         <div className='expenses'>
           {/* The list of expenses will be displayed here */}
           <ul>
-            {expensesArray.map((expense, index) => {
-             
-               return (<li key={index} className='title-expenses'>
+            {expensesArray.map((expense, index) => (
+              <li key={index} className='title-expenses'>
                 <h3>{expense.Title}</h3>
                 <div className="amount">
-                Amount:{` $${parseFloat(expense.Amount).toFixed(2)}`}
+                  Amount: ${parseFloat(expense.Amount).toFixed(2)}
                 </div>
                 <div className="date">
-                <div className="delete">
-                Date: {formatDate(expense.Date)}
-                <button className='deleteButton' onClick={() => deleteForever(expense.id)}><MdDeleteForever/></button>
+                  <div className="delete">
+                    Date: {formatDate(expense.Date)}
+                    <button className='deleteButton' onClick={() => deleteForever(expense.id)}>
+                      <MdDeleteForever />
+                    </button>
+                  </div>
                 </div>
-                </div>
-               
-              </li>)
-                
-               })}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
