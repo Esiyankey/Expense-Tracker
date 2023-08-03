@@ -66,13 +66,13 @@ export const Modal = ({ handleCloseModal }) => {
             <div className="underline"></div>
             <form>
               <label htmlFor="Full name ">Full Name</label>
-              <input type="text" placeholder="Grace" className="signup-input" />
+              <input type="text" placeholder="Elvis" className="signup-input" />
               <label className="label" htmlFor="email">
                 Email
               </label>
               <input
                 type="text"
-                placeholder="hahaha@gmail.com"
+                placeholder="elvis@gmail.com"
                 onChange={(e) => {
                   setSignupEmail(e.target.value);
                 }}
@@ -84,7 +84,7 @@ export const Modal = ({ handleCloseModal }) => {
 
               <input
                 type="password"
-                placeholder="slslsll"
+                placeholder="elvisowusu12:./."
                 onChange={(e) => {
                   setSignupPassword(e.target.value);
                 }}
@@ -123,7 +123,7 @@ export const Modal = ({ handleCloseModal }) => {
               </label>
               <input
                 type="text"
-                placeholder="hahaha@gmail.com"
+                placeholder="elvis@gmail.com"
                 onChange={(e) => {
                   setLoginEmail(e.target.value);
                 }}
@@ -134,7 +134,7 @@ export const Modal = ({ handleCloseModal }) => {
               </label>
               <input
                 type="password"
-                placeholder="dkdkkdkdk"
+                placeholder="elvis123fls/;"
                 onChange={(e) => {
                   setLoginPassword(e.target.value);
                 }}

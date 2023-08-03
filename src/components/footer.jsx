@@ -1,13 +1,15 @@
 import React from "react";
 import "../styles/footer.css";
+import { BsTwitter } from "react-icons/bs";
+import { BsFacebook } from "react-icons/bs";
 
 export const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-section">
         <h4>Contact Us</h4>
-        <p>Email: example@example.com</p>
-        <p>Phone: 123-456-7890</p>
+        <p>Email: owusuelvisgyasi@gmail.com</p>
+        <p>Phone: +233 552 778 748</p>
       </div>
       <div className="footer-section">
         <a href="/privacy-policy">Privacy Policy</a>
@@ -19,14 +21,14 @@ export const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Facebook
+        <BsFacebook/>
         </a>
         <a
           href="https://www.example.com/twitter"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Twitter
+          <BsTwitter/>
         </a>
       </div>
       <div className="footer-section">
