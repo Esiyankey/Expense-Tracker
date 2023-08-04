@@ -22,7 +22,7 @@ export const Dashboard = ({ incomeValue, totalExpenses, percentageLeft, setPerce
               <h4>Total Income for Spending</h4>
               <div className="amount">
                 {/* Display calculated total income for spending */}
-                {incomeValue - (percentageLeft * incomeValue)}
+                {(percentageLeft * incomeValue)}
               </div>
             </div>
 
@@ -42,7 +42,7 @@ export const Dashboard = ({ incomeValue, totalExpenses, percentageLeft, setPerce
               <h4>Total Balance</h4>
               <div className="amount">
                 {/* Display calculated total balance */}
-                {(incomeValue - (percentageLeft * incomeValue)) - totalExpenses}
+                {((percentageLeft * incomeValue)) - totalExpenses}
               </div>
             </div>
           </div>
