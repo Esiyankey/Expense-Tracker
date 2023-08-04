@@ -13,7 +13,7 @@ import { FaBars } from "react-icons/fa";
 export const Homepage = () => {
   const [activeComponent, setActiveComponent]=useState('Dashboard');
   const [isMenuOpen,setIsMenuOpen] = useState(false)
-  const [incomeValue, setIncomeValue] = useState(0);
+  const [incomeValue, setIncomeValue] = useState('');
   const [totalExpenses, setTotalExpenses] = useState(0);
   const [totalBudget,setTotalBudget] =useState(0)
 
