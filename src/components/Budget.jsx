@@ -28,9 +28,24 @@ export const Budget = ({ incomeValue, setIncomeValue, totalBudget, setTotalBudge
     setInputError('');
   };
 
+  // Event handler for income input
+  const incomeValueEvent = (e) => {
+    setIncomeValue(e.target.value)
+  }
+
+
   // Function to add a new budget percentage object
   const addPercentageObject = () => {
     // Validation checks for input fields
+    if(!incomeValue){
+      setIncomeInputError('Total income field required')
+      return;
+    }
+    const incomeAsNumber = parseFloat(incomeValue);
+    if (isNaN(incomeAsNumber) || incomeAsNumber <= 0) {
+      alert('Please enter a valid income amount.');
+      return;
+    }
     if (!percentageTitle || !percentageValue) {
       setInputError('Both title and percentage fields are required.');
       return;
@@ -141,9 +156,8 @@ export const Budget = ({ incomeValue, setIncomeValue, totalBudget, setTotalBudge
             <input
               className='income'
               type="text"
-              onChange={(e) => {
-                setIncomeValue(e.target.value)
-              }}
+              onFocus={() => setIncomeInputError('')}
+              onChange={incomeValueEvent}
               value={incomeValue}
             />
           </div>
