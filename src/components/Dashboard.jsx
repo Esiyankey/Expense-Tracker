@@ -50,9 +50,9 @@ export const Dashboard = ({ incomeValue, totalExpenses, percentageLeft, setPerce
       </div>
 
       {/* Right section of the dashboard */}
-      <div className='r-dashboard'>
+      {/* <div className='r-dashboard'> */}
         {/* Placeholder for the content of the right section */}
-      </div>
+      {/* </div> */}
     </div>
   );
 };
