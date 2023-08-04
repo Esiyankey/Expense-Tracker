@@ -51,24 +51,15 @@ export const Expenses = ({ totalExpenses, setTotalExpenses }) => {
         setExpensesAmount("");
         setExpensesTitle("");
         setExpensesDate("");
+        // alert('Expense added');
       } catch (e) {
         alert("Error adding expenses");
         console.error("Error adding document: ", e);
       }
     }
   };
-
-
-  // Function to calculate the total expenses
-  const calculateTotalExpenses = () => {
-    let total = 0;
-    for (const expense of expensesArray) {
-      total += parseFloat(expense.Amount);
-    }
-    return total;
-  };
-
-
+  
+  
   // Fetch expenses data from Firestore on component mount
   useEffect(() => {
     const fetchExpenses = async () => {
@@ -85,15 +76,25 @@ export const Expenses = ({ totalExpenses, setTotalExpenses }) => {
   }, []);
 
 
+  // Function to calculate the total expenses
+  const calculateTotalExpenses = () => {
+    let total = 0;
+    for (const expense of expensesArray) {
+      total += parseFloat(expense.Amount);
+    }
+    return total;
+  };
+
   // Memoize the total expenses calculation using useMemo
   const totalExpensesMemo = useMemo(() => calculateTotalExpenses(), [expensesArray]);
-
   
   // Update totalExpenses when totalExpensesMemo changes
   useEffect(() => {
     setTotalExpenses(totalExpensesMemo);
   }, [totalExpensesMemo, setTotalExpenses]);
 
+
+  // The Date was not able to be displayed to the user
   // Function to format the date from Timestamp to a human-readable format
   const formatDate = (timestamp) => {
     if (timestamp) {
@@ -102,8 +103,7 @@ export const Expenses = ({ totalExpenses, setTotalExpenses }) => {
     }
     return "";
   };
-
-
+  
 
   // Function to delete an expense from Firestore
   const deleteForever = async (expenseId) => {
@@ -114,7 +114,7 @@ export const Expenses = ({ totalExpenses, setTotalExpenses }) => {
       console.error("Error deleting expense:", error);
     }
   };
-  
+
 
   return (
     <div className='main'>
