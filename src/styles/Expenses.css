@@ -1,0 +1,91 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 100vh;
+}
+.expenses-results{
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    align-items: center;
+    background-color: white;
+    border-radius:0.6rem;
+    height: 3rem;
+    box-shadow: rgba(206, 206, 219, 0.25) 0px 2px 5px -1px, rgba(110, 108, 108, 0.038) 0px 1px 3px -1px;
+}
+
+.bottom{
+    display: flex;
+    gap: 1.5rem;
+}
+.expenses-inputs,.expenses{
+    flex: 50%;
+}
+.expenses-inputs input{
+    display: block;
+    /* margin: 0.9rem 0rem; */
+    border-radius: 0.6rem;
+    border:solid 3px white;
+    padding: 0.3rem 2rem;
+    background: none;
+    color:rgb(163, 160, 160);
+}
+.expenses-inputs input::placeholder{
+    color:gray;
+}
+.expenses-inputs input :focus{
+    border:solid 3px rgb(251, 251, 251);
+    background-color: aliceblue;
+}
+button{
+    cursor: pointer;
+}
+.expenses{
+    background-color:  #f3eeee;
+    
+}
+/* Style for each expense list item */
+.title-expenses {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0.6rem;
+    background-color: white;
+  }
+  
+  /* Style for the list of expenses */
+  .expenses ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .expenses ul li{
+    font-size: 13px;
+    padding: 0  0.3rem;
+    margin: 0.2rem;
+  }
+  .expenses ul li:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  }
+  
+  .delete{
+    display: flex;
+    justify-content: space-between;
+  }
+  .deleteButton{
+    border: none;
+    background:none;
+    font-size: 1.5rem;
+  }
+  .deleteButton:hover{
+    background-color:#f3eeee;
+    border-radius: 40%;
+    color: black;
+  }
+  @media (max-width: 884px) {
+    .bottom{
+      flex-direction: column;
+    }
+  }

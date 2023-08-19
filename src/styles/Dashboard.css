@@ -1,0 +1,151 @@
+
+.MainDashboard{
+    display:flex ;
+    flex-direction: row;
+    background-color: #F1F5F9;
+    /* background: linear-gradient(to bottom, #87CEFA, #ADD8E6, #87CEFA);  */
+    gap: 1rem;
+}
+
+* .l-dashboard{  
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 100%;
+}
+
+.totals{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.income-expenses{
+    display: flex;
+    gap: 1rem;
+}
+    
+ 
+.total-income, .total-expenses, .total-balance{
+    background-color: white;
+    border-radius:0.6rem;
+    height: 5rem;
+    flex: 50%;
+    padding: 0.5rem;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    align-items: start;
+    position: relative;
+    padding-left: 3rem;
+}
+.total-income:hover, .total-expenses:hover, .total-balance:hover{
+    cursor:pointer;
+    color:rgba(45, 169, 236, 0.895);
+}
+.total-income .totalTri, .expenTri{
+    width: 25px;
+    filter: invert(54%) sepia(40%) saturate(7151%) hue-rotate(220deg) brightness(96%) contrast(89%);
+    position: absolute;
+    top: 0.7rem;
+    left: 0.5rem;
+    
+}
+.expenTri{
+    filter: invert(54%) sepia(40%) saturate(7151%) hue-rotate(220deg) brightness(96%) contrast(89%);
+}
+.amount{
+    align-self: center;
+}
+.balance{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3eeee;
+}  
+.total-balance{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    width: rem;
+    height: 4rem;
+}
+.transactions h1{
+    font-size: 2.8rem;
+    background-color: #A59AE8;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'space grotesk';
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-right: 20px;
+}
+.transactions h1 img{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+   
+    width: 100px;
+    filter: invert(100%) ;
+}
+.transactions .chart{
+    flex: 50%;
+    width: 100%;
+    height: 50vh;
+    background-color: white;
+    border-radius: 0.6rem;
+}
+.r-dashboard{
+    flex: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.r-dashboard h2{
+    margin-top: 3rem;
+}
+
+.salary-expense{
+    display: flex;
+    flex-direction: column;
+}
+.Salaryexpense{
+    display: flex;
+    gap: 1rem;
+   flex-direction: column;
+}
+.Salaryexpense div{
+    display: flex;
+    justify-content: space-between;
+   gap: 0.5rem;
+}
+.Spendings,.Salaryexpense .target{
+    background-color: white;
+    justify-content:space-between;
+    align-items: center;
+    height: 3rem;
+    border-radius: 0.6rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.Spendings{
+    display: flex;
+    justify-content: space-between;
+} 
+@media(max-width: 768px) {
+    .MainDashboard{
+        flex-direction: column;
+    }
+    .total-income, .total-expenses, .total-balance{
+        padding-left: 2rem;
+        padding-top:0.5rem ;
+    }
+    .transactions h1 img{
+        width: 50px;
+    }
+}
+    
